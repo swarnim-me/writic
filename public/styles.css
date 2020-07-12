@@ -1,0 +1,46 @@
+body{
+    height: 100vh;
+}
+
+.content{
+    text-align: center;
+    padding-top: 20%;
+}
+
+.content h1{
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+@media only screen and (min-width: 992px) {
+    .myForm-form {
+      width: 40%;
+    }
+  }
+
+@media only screen and (min-width: 992px) {
+    .myForm-form-post {
+      width: 60%;
+    }
+  }
+
+
+.myForm-form{
+    border-radius: 20px;
+}
+.myForm-submit{
+    width: 100%;
+}
+.myForm{
+    display: flex;
+    justify-content: center;
+}
+
+.myForm h1{
+    font-size: 5rem;
+}
+
+
+.postBody p {
+  word-wrap: break-word;
+}

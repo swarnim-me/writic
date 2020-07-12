@@ -1,0 +1,19 @@
+<%- include('partials/header.ejs') %>
+<div class="jumbotron py-3">
+    <h1 class="display-4"><%=post.title%></h1>
+    <p class="lead"><em>-Created by <strong><%=post.author%></strong></em></p>
+    <div class="post-footer d-flex justify-content-between">
+        <div> 
+            <%if(currentUser && currentUser.username!==user.username){%>
+                <a href="/<%=user.username%>/<%=post._id%>/save" class="btn btn-md btn-primary">Save</a>
+            <%}%>
+            <a href="/<%=user.username%>/" class="btn btn-md btn-primary">Back</a>
+        </div>
+        <p><%=post.date%></p>
+    </div>
+</div>
+<div class="postBody">
+    <p class="lead"><%=post.body%></p>
+</div>
+
+<%- include('partials/footer.ejs') %>

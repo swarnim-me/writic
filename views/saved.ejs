@@ -1,0 +1,22 @@
+<%- include('partials/header.ejs') %>
+<div class="create text-center mb-3">
+        <h1 class="display-4">Here are your saved posts!</h1>   
+</div>
+<div class="myPosts">
+    <%liked.forEach(function(like){%>
+        <div class="jumbotron py-3">
+            <h1 class="display-4"><%=like.title%></h1>
+            <p class="lead"><%=like.body.substring(0, 50)%>...</p>
+            <p class="lead"><em>-Created by <strong><%=like.author%></strong></em></p>
+            <div class="like-footer d-flex justify-content-between">
+                <div>
+                    <a href="/<%=like.author%>/<%=like._id%>" class="btn btn-md btn-dark">See More</a>
+                        <a href="/<%=currentUser.username%>/saved/<%=like._id%>/delete" class="btn btn-md btn-danger">Delete</a>
+                </div>
+                <p><%=like.dateCreated%></p>
+            </div>
+        </div>
+    <%})%>
+    
+</div>
+<%- include('partials/footer.ejs') %>

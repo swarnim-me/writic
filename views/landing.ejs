@@ -1,0 +1,12 @@
+<%- include('partials/header.ejs') %>
+<div class="content">
+    <h1>WRITIC</h1>
+    <h5>Discover the writer in you!</h5>
+    <%if(currentUser && currentUser.username.length>0){%>
+        <a href="/<%=currentUser.username%>" class="btn btn-lg btn-dark m-2">Start Writing</a>
+    <%}
+    else{%>
+        <a href="/auth/register" class="btn btn-lg btn-dark m-2">Get Started</a>
+    <%}%>
+</div>
+<%- include('partials/footer.ejs') %>

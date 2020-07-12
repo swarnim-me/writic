@@ -1,0 +1,29 @@
+<%- include('partials/header.ejs') %>
+<div class="create text-center mb-3">
+    <%if(currentUser && currentUser.username===user.username){%>
+        <a href="<%=currentUser.username%>/create" class="btn btn-dark btn-lg">Create Post</a>
+    <%}
+    else{%>
+        <h1 class="display-4">Welcome to <%=user.firstname%>'s Writic</h1>
+    <%}%>
+</div>
+<div class="myPosts">
+    <%posts.forEach(function(post){%>
+        <div class="jumbotron py-3">
+            <h1 class="display-4"><%=post.title%></h1>
+            <p class="lead"><%=post.body.substring(0, 50)%>...</p>
+            <p class="lead"><em>-Created by <strong><%=post.author%></strong></em></p>
+            <div class="post-footer d-flex justify-content-between">
+                <div>
+                    <a href="/<%=user.username%>/<%=post._id%>" class="btn btn-md btn-dark">See More</a>   
+                    <%if(currentUser && currentUser.username===user.username){%>
+                        <a href="<%=user.username%>/<%=post._id%>/delete" class="btn btn-md btn-danger">Delete</a>
+                    <%}%>
+                </div>
+                <p><%=post.dateCreated%></p>
+            </div>
+        </div>
+    <%})%>
+    
+</div>
+<%- include('partials/footer.ejs') %>

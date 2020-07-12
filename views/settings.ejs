@@ -1,0 +1,32 @@
+<%- include('partials/header.ejs') %>
+<div class="myForm">
+    <form class="row myForm-form mx-4 justify-content-center py-4 px-2 bg-light" method="POST" action="/<%=currentUser.username%>/settings">
+        <div class="col-12">
+            <h1 class="text-center myForm-head text-dark mb-4">Settings</h1>
+        </div>
+        <div class="col-lg-6 col-12 form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" class="form-control" placeholder="First Name" name="firstname" value="<%=currentUser.firstname%>" id="firstname">
+        </div>
+
+        <div class="col-lg-6 col-12 form-group">
+            <label for="firstname">Last Name</label>
+            <input type="text" class="form-control" placeholder="Last Name" name="lastname" value="<%=currentUser.lastname%>" id="lastname">
+        </div>
+        <div class="col-12 form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" placeholder="Username" name="username" value="<%=currentUser.username%>" id="username">
+        </div>
+        <div class="col-lg-6 col-12 form-group">
+            <select name="privacy" id="" class="form-control">
+                <option value="public">Public</option>
+                <option value="private">Private</option>
+            </select>
+        </div>
+        <div class="col-12 form-group">
+            <button class="btn btn-lg btn-dark myForm-submit">Apply</button>
+        </div>
+
+    </form>
+</div>
+<%- include('partials/footer.ejs') %>
